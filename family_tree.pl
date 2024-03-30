@@ -91,3 +91,16 @@ wife(X, Y):- mother(X,C), father(Y,C), woman(X).
 wife(X):- wife(Y,X),!, print(Y), nl, fail.
 %Х - жена Y
 %Х - муж, вывод жены
+
+grand_son(X, Y):- man(X), parent(A,X), parent(Y,A).
+grand_sons(X):- man(Y), parent(A,Y), parent(X,A), print(Y), nl, fail.
+%Х - внук Y
+%Х - хто-то, вывод внуков
+
+grand_ma_and_son(X,Y) :- grand_son(X,Y), woman(Y); grand_son(Y,X), woman(X).
+%X бабушка, Y внук или наоборот
+
+uncle(X, Y) :- parent(A,Y), brother(X,A).
+uncle(X) :- parent(A,X), brother(Y,A), print(Y), nl, fail.
+%uncle(X,Y) Х - дядя для Y
+%uncle(X) Х - племянник(-ца), вывод дядь

@@ -81,3 +81,13 @@ b_s(X,Y):- mother(M,X), mother(M,Y), father(F,X), father(F,Y), not(X=Y).
 %Проверка на сиблинга через братство/сестринство
 b_s(X):- b_s(Y, X), print(Y), nl, fail.
 %Вывод сиблингов
+
+daughter(X,Y):- woman(X), parent(Y,X).
+daughter(X):- woman(Y), !, children(X), print(Y), false.
+%daughter(X,Y) Х - дочь для Y
+%daughters(X) Х - родитель, вывод дочери
+
+wife(X, Y):- mother(X,C), father(Y,C), woman(X).
+wife(X):- wife(Y,X),!, print(Y), nl, fail.
+%Х - жена Y
+%Х - муж, вывод жены

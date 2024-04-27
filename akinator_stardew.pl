@@ -37,6 +37,10 @@ ask(hated) :-
     write('The char is unliked by fandom* [Yes/No]'),
     query('(*specifically by me, author of quiz)').
 
+char(junimo) :-
+    ask(non_human),
+    ask(apple).
+%при ответе на первый вопрос отпадают 3, 4, 7, 8 и 9; при ответе на второй вопрос отпадают оставшиеся 5 и 6
 
 char(krobus) :-
     ask(non_human),
@@ -46,10 +50,6 @@ char(krobus) :-
 char(mysh_v_shlyapi) :-
     ask(non_human),
     ask(seller).
-
-char(junimo) :-
-    ask(non_human),
-    ask(apple).
 
 char(goblin) :-
     ask(non_human).

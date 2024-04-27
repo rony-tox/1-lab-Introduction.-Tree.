@@ -32,6 +32,7 @@ ask(child) :-
 
 ask(outer) :-
     query('The char live outside Pelican Town. [Yes/No]').
+%этот вопрос отличает, например, Сэнди и Робин или Лео и Винсента поскольку предыдущие вопросы у них совпадают ответами, выводя на отдельный от других персонажей "рут"
 
 ask(hated) :-
     write('The char is unliked by fandom* [Yes/No]'),

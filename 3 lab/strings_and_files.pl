@@ -26,6 +26,9 @@ read_all_str(StrList, CurrentList, _):-
 % read_file_strings_in_list(+FilePath, -ListOfStrings) - считать все строки из файла в виде списка строк
 read_file_strings_in_list(FilePath, ListOfStrings):-see(FilePath), read_all_str(ListOfStrings), seen.
 
+
+
+
 % write_list_of_lists(+List) - вывести список списков (список строк)
 write_list_of_lists([]):-!.
 write_list_of_lists([H|TailListOfLists]):-write_list_str(H), nl, write_list_of_lists(TailListOfLists),!.
